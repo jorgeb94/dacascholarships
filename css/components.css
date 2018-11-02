@@ -1,0 +1,53 @@
+.logo-icon{
+  color: #6E7986;
+  background: #2b3a4f;
+  width: 100%;
+  padding: 20px;
+  height: 65px;
+  text-transform: uppercase;
+}
+
+.icon {
+  color: #5C789A;
+  font-size: 1.5em;
+}
+
+.star-scholarship {
+  color: #DFAA29;
+}
+
+.fa-star-circle {
+  color: #2594F8;
+  padding-left: 10px;
+  font-size: 1.3em !important;
+}
+
+.fa-full-circle {
+  color: #F7727F;
+  padding-left: 10px;
+  font-size: 1.3em !important;
+}
+
+.fa-state-circle {
+  color: #FEA535;
+  padding-left: 10px;
+  font-size: 1.3em !important;
+}
+
+.fa-status-circle {
+  color: #24e52b;
+  padding-left: 10px;
+  font-size: 1.3em !important;
+}
+
+.fa-general-circle {
+  color: #2F6199;
+  padding-left: 10px;
+  font-size: 1.3em !important;
+}
+
+.fa-open-circle {
+  color: #2F6199;
+  padding-left: 10px;
+  font-size: 1.3em !important;
+}

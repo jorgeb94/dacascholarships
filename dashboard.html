@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | DACA Scholarship</title>
+    <!-- Facebooks open graoh meta tags -->
+    <meta property="og:image" content="http://dacascholarships.com/img/heroimg.jpg"/>
+    <meta property="og:image:width" content="200">
+    <meta property="og:image:height" content="500">
+    <meta property="og:title" content="Daca Scholarships | Dashboard"/>
+    <meta property="og:url" content="http://dacascholarships.com/dashboard.html"/>
+    <meta property="og:description" content="Scholarships available to DACA students!"/>
+    <meta property="og:type" content="website" />
+    <!-- Twitter cards -->
+    <meta name="twitter:site" content="@dacascholarship">
+    <meta name="twitter:creator" content="@dacarscholarship">
+    <meta name="twitter:title" content="Daca Scholarships">
+    <meta name="twitter:description" content="Scholarships available to DACA students!">
+    <meta name="twitter:image" content="http://dacascholarships.com/img/heroimg.jpg">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" media="(max-width: 680px)" href="css/dashboard-mobile.css">
+    <link rel="stylesheet" media="(max-width: 680px)" href="css/mobile.css" />
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://jqueryui.com/autocomplete/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://jqueryui.com/autocomplete/resources/demos/style.css">
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <!-- Google analytics code -->
+    <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-104062178-1', 'auto');
+          ga('send', 'pageview');
+
+    </script>
+  </head>
+  <body>
+
+
+    <!-- start of dashboard -->
+    <div id="dashboard-container">
+      <div class="navigation">
+        <div class="menu">
+          <div class="logo align-left">
+            <a href="index.html"><i class="fa fa-graduation-cap" aria-hidden="true"></i></a>
+          </div>
+          <!-- mobile nav -->
+          <div class="menu-icon align-right" id="icon-display">
+            <span id="menu-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
+          </div>
+        </div>
+        <!-- mobile nav -->
+        <div id="mobile-nav">
+          <ul>
+            <a href="index.html"><li>Home</li></a>
+            <a href="dashboard.html"><li>Dashboard</li></a>
+            <a href="mission.html"><li>Mission</li></a>
+            <a href="contribute.php"><li>Contribute</li></a>
+          </ul>
+        </div>
+      </div>
+      <div class="side-filter">
+        <div class="dashboard-logo">
+          <a href="dashboard.html"><span><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</span></a>
+        </div>
+
+
+        <div class="categories">
+          <div class="filter-icon">
+            <span class="icon"><i class="fa fa-filter" aria-hidden="true"></i><span class="filter-text"> FILTER SCHOLARSHIPS</span></span>
+          </div>
+
+          <!-- for mobile view -->
+          <!-- <div class="sort">
+            <span><i class="fa fa-tachometer" aria-hidden="true"></i></span><span> FILTER SCHOLARSHIPS BY</span>
+          </div> -->
+
+          <div class="star item">
+            <span><i class="fa fa-circle fa-star-circle" aria-hidden="true"></i><button type="button" name="button" id="star" onclick="filterFunction('Star Scholarships', 'star', 'yes')">Star</button></span>
+          </div>
+
+          <div class="full item">
+            <span><i class="fa fa-circle fa-full-circle" aria-hidden="true"></i><button type="button" name="button" id="full" onclick="filterFunction('Full Scholarships', 'amount', 'full')">Full</button></span>
+          </div>
+
+          <div class="stem item">
+            <span><i class="fa fa-circle fa-full-circle" aria-hidden="true"></i><button type="button" name="button" id="stem" onclick="filterFunction('Stem Scholarships', 'type', 'stem')">Stem</button></span>
+          </div>
+
+          <!-- <div class="state item">
+            <span id="state"><i class="fa fa-circle fa-state-circle" aria-hidden="true"></i><button type="button" name="button" id="no-padding"> By State </button><span id="arrow" class="arrow"><i class="fa fa-caret-down" aria-hidden="true"></i></span></span>
+            <div id="toggle-states">
+              <ul>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">AL</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">AK</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">AZ</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">AR</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">CA</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">CO</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">CT</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">DE</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">DC</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">FL</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">GA</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">HI</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">ID</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">IN</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">IA</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">KS</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">KY</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">LA</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">ME</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">MD</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">MA</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">MI</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">MN</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">MS</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">MO</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">MT</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">NE</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">NV</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">NH</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">NJ</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">NM</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">NY</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">NC</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">ND</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">OH</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">OK</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">OR</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">PA</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">RI</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">SC</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">SD</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">TN</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">TX</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">UT</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">VT</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">VA</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">WA</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">WV</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">WI</li>
+                <li class="state-id" onclick="filterByState(this.innerHTML)">WY</li>
+              </ul>
+            </div>
+          </div> -->
+
+          <!-- <div class="status item">
+            <span id="status"><i class="fa fa-circle fa-status-circle" aria-hidden="true"></i><button type="button" name="button" id="status"> Open Now</button></span>
+          </div> -->
+
+          <div class="general item">
+            <span><i class="fa fa-circle fa-general-circle" aria-hidden="true"></i><button type="button" name="button" id="general" onclick="filterFunction('General Scholarships', 'type', 'general')">General</button></span>
+          </div>
+
+          <div class="open item">
+            <span><i class="fa fa-circle fa-open-circle" aria-hidden="true"></i><button type="button" name="button" id="open" onclick="filterFunction('Open Scholarships', 'status', 'open')">Open</button></span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="content-container">
+        <div class="content-head">
+          <span class="align-left">
+            <div class="ui-widget">
+              <input type="text" name="" value="" placeholder="Enter Name of Scholarship" id="input"><span><i class="fa fa-search" aria-hidden="true" id="search-btn"></i></span>
+            </div>
+          </span>
+          <div class="nav-links align-right">
+            <span><a href="index.html">Home</a></span>
+            <span><a href="dashboard.html">Dashboard</a></span>
+            <span><a href="mission.html">Mission</a></span>
+            <span><a href="contribute.php">Contribute</a></span>
+          </div>
+        </div>
+        <div class="filter-type" id="filter-type">
+          Star Scholarships
+        </div>
+
+        <div class="container-s" id="container-s">
+          <div class="scholarship-container">
+            <h1><span class="star-scholarship">
+            </span><span>The Dream.US</span></h1>
+              <div class="description">
+                The Dream.US offers two different scholarships for high school or community college students.
+              <h3>The National Scholarship</h3>
+                <ul>
+                <li>Available to high school or community college graduates.</li>
+                <li>Students must have DACA or TPS status and qualify for in-state tuition at one of our Partner Colleges to receive this scholarship.</li>
+                <li>The Scholarship is for up to $12,500 for an associate’s degree and $25,000 for a bachelor’s degree.</li>
+                </ul>
+              <h3>The Opportunity Scholarship</h3>
+                <ul>
+                  <li>Available to high school graduates who live in targeted, locked-out states that do not offer in-state tuition to DREAMers</li>
+                  <li>Students must have DACA or TPS status and qualify for in-state tuition at one of our Partner Colleges to receive this scholarship</li>
+                  <li>The Scholarship is for up to $80,000 to cover tuition, fees, and on-campus housing and meals for a bachelor’s degree</li>
+                </ul>
+              </div>
+            <div class="icons-container">
+              <span class="award"><i class="fa fa-trophy" aria-hidden="true"></i> Full</span><span class="time"><i class="fa fa-clock-o" aria-hidden="true"></i> Opens November</span>
+              <div class="apply">
+                <a href="http://www.thedream.us/scholarships/" target="_blank"><span class="apply-btn">Apply</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="scholarship-container">
+            <h1><span class="star-scholarship">
+            </span>Golden Doors Scholarship</h1>
+              <div class="description">
+                Golden Door Scholarship mission is to provide Four-year college scholarships for high-performing high school grads, professional development and internship support, and a scholar-driven, pay-it-forward approach to sustainability.
+                <h3>Eligibility</h3>
+                <ul>
+                  <li>Must have  Deferred Action for Childhood Arrivals (DACA) or Temporary Protected Status (TPS)</li>
+                  <li>Strong priority is given to students from states that charge out-of-state tuition to DACAmented students</li>
+                  <li>High GPA</li>
+                  <li>Has held leadership positions or is involved in the community</li>
+                </ul>
+              </div>
+            <div class="icons-container">
+              <span class="award"><i class="fa fa-trophy" aria-hidden="true"></i> Full</span><span class="time"><i class="fa fa-clock-o" aria-hidden="true"></i> Opens September</span>
+              <div class="apply">
+                <a href="http://www.goldendoorscholars.org/" target="_blank"><span class="apply-btn">Apply</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="scholarship-container">
+            <h1><span class="star-scholarship">
+            </span>Hispanic Scholarship Fund</h1>
+              <div class="description">
+                The HSF Scholarship is designed to assist students of Hispanic heritage obtain a college degree. Scholarships are available, on a competitive basis.
+                <h3>Eligibility</h3>
+                <ul>
+                  <li>Must be of Hispanic Heritage</li>
+                  <li>Minimum of 3.0 GPA on a 4.0 scale (or equivalent) for High School Students</li>
+                  <li>Minimum of 2.5 GPA on a 4.0 scale (or equivalent) for College and Graduate Students</li>
+                  <li>Plan to enroll Full-Time in an accredited, not-for-profit, 4-year university, or graduate school, during the FALL of a scholarship cycle (year)</li>
+                  <li>U.S. Citizen, Permanent Legal Resident, DACA or Eligible Non-Citizen (as defined by FAFSA)</li>
+                  <li>Complete FAFSA or state based financial aid application (if applicable)</li>
+                </ul>
+              </div>
+              <div class="icons-container">
+              <span class="award"><i class="fa fa-trophy" aria-hidden="true"></i> $500-$5,000</span><span class="time"><i class="fa fa-clock-o" aria-hidden="true"></i> Opens January 6th</span>
+              <div class="apply">
+                <a href="https://www.hsf.net/scholarship" target="_blank"><span class="apply-btn">Apply</span></a>
+              </div>
+              </div>
+          </div>
+
+          <div class="scholarship-container">
+            <h1><span class="star-scholarship">
+            </span>Quest Bridge Scholarship</h1>
+              <div class="description">
+                Quest Bridge is looking for high school seniors who have shown outstanding academic ability despite financial challenges.
+                <h3>Eligibility</h3>
+                <ul>
+                  <li>In order to be eligible to apply to the National College Match in the fall of 2017, applicants must graduate from high school during or before the summer of 2018 and plan to enroll as a freshman in college in the fall of 2018.</li>
+                  <li>Students, regardless of citizenship, currently attending high school in the United States</li>
+                </ul>
+                <h3>Academic Criteria</h3>
+                <p>The following is based on profiles of past Finalists, and are not strict cut-offs.</p>
+                <ul>
+                  <li>Primarily A's in the most challenging courses available (usually including Honors, AP, and/or IB level courses)</li>
+                  <li>Top 5-10% of your graduating class</li>
+                  <li>SAT or PSAT scores > 1310 or ACT composite score > 28</li>
+                  <li>Strong writing ability, intellectual spark, and determination through essays and teacher/counselor recommendations</li>
+                </ul>
+              </div>
+            <div class="icons-container">
+              <span class="award"><i class="fa fa-trophy" aria-hidden="true"></i> Full</span><span class="time"><i class="fa fa-clock-o" aria-hidden="true"></i> Opens Summer 2017</span>
+              <div class="apply">
+                <a href="https://www.questbridge.org/" target="_blank"><span class="apply-btn">Apply</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="scholarship-container">
+            <h1><span class="star-scholarship">
+            </span>Society of Hispanic Professional Engineers</h1>
+              <div class="description">
+                Scholarships actualize each of SHPE’s mission’s components by increasing student access and support to higher education in STEM programs.  Their aim is to bridge the disparities in STEM degrees between Hispanics and their non-Hispanic counterparts.
+
+                <h3>Eligibility</h3>
+                <ul>
+                  <li>Minimum 2.75 GPA</li>
+                  <li>Full-time Student</li>
+                  <li>SHPE Member</li>
+                </ul>
+              </div>
+            <div class="icons-container">
+              <span class="award"><i class="fa fa-trophy" aria-hidden="true"></i> $1,000-$5,000</span><span class="time"><i class="fa fa-clock-o" aria-hidden="true"></i> Closes July 31st</span>
+              <div class="apply">
+                <a href="http://scholarships.shpe.org/students/" target="_blank"><span class="apply-btn">Apply</span></a>
+              </div>
+            </div>
+          </div>
+
+      </div>
+
+    </div>
+
+</div>
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<script type="text/javascript" src="js/api.js"></script>
+
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/mobile.js"></script>
+
+  </body>
+</html>

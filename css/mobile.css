@@ -1,0 +1,99 @@
+body {
+  width: 100%;
+}
+
+.menu-items {
+  display: none;
+}
+
+.menu-icon {
+  display: inline-block;
+  font-size: 1.6em;
+  padding-top: 10px;
+  color: #FFF;
+}
+
+.menu .logo {
+  font-size: 2.5em;
+  color: #67ddab;
+  }
+
+.menu-icon:hover {
+  cursor: pointer;
+}
+
+#mobile-nav {
+  text-align: center;
+  text-transform: uppercase;
+  display: inline-block;
+  position: fixed;
+  left: -2000px;
+  margin: 0px;
+  width: 100%;
+}
+
+#mobile-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background: #37485F;
+}
+
+#mobile-nav ul li {
+  text-decoration: none;
+  padding: 10px 0px;
+  display: inline-block;
+  width: 100%;
+  color: #FFF;
+}
+
+#mobile-nav ul li:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#mobile-nav ul li a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+.hero {
+  background-image: url("../img/heroimg-mobile.jpg");
+}
+
+.mission-header {
+  width: 100%;
+  height: 400px;
+  background-image: url("../img/missionimg-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contact-hero {
+  width: 100%;
+  height: 400px;
+  background: #F5F5F5;
+  background-image: url("../img/contactimg-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.title {
+  padding-top: 100px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.title h1 {
+  font-size: 2.3em;
+}
+
+.title h2 {
+  font-size: 1em;
+}
+
+.dash-btn {
+  background: #67ddab;
+  border: 0px;
+  border-radius: 25px;
+  font-size: 1.3em;
+  color: #FFF;
+}

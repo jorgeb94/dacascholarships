@@ -1,0 +1,181 @@
+#dashboard-container {
+  display: block;
+}
+
+.side-filter {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #F7F7FF;
+}
+
+.content-container {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  max-height: 100%;
+  background: #F7F7FF;
+}
+
+.nav-links {
+display: none;
+}
+
+.navigation {
+  display: block;
+}
+.menu-items {
+  display: none;
+}
+
+.menu-icon {
+  display: inline-block;
+  font-size: 1.6em;
+  padding-top: 10px;
+  color: #FFF;
+}
+
+.menu .logo {
+  font-size: 2.5em;
+  color: #67ddab;
+  }
+
+.menu-icon:hover {
+  cursor: pointer;
+}
+
+#mobile-nav {
+  text-align: center;
+  text-transform: uppercase;
+  display: inline-block;
+  position: fixed;
+  left: -2000px;
+  margin: 0px;
+  width: 100%;
+}
+
+#mobile-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background: #37485F;
+}
+
+#mobile-nav ul li {
+  text-decoration: none;
+  padding: 10px 0px;
+  display: inline-block;
+  width: 100%;
+  color: #FFF;
+}
+
+#mobile-nav ul li:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#mobile-nav ul li a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+.dashboard-logo {
+  float: none;
+  text-align: left;
+  margin-left: 20px;
+}
+
+.item button{
+  background: #2b3a4f;
+}
+
+.filter-icon {
+  display: none;
+}
+
+.sort {
+  width: 100%;
+  display: block;
+  padding-left: 40px;
+  padding-bottom: 10px;
+  padding-top: 20px;
+  color: #37485F;
+  font-size: 1.3em;
+
+}
+
+.sort i {
+  font-size: 1.3em;
+  padding-right: 5px;
+}
+
+.dashboard-logo {
+  display: none;
+}
+
+.categories {
+  width: 100%;
+  padding:0px;
+  background-color: #d3dce8;
+  text-align: left;
+  margin-left: 0px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+
+.item i {
+  display: none;
+}
+
+.item button{
+  margin-bottom: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #37485F;
+  background: #d3dce8;
+  text-transform: uppercase;
+  border-bottom: 2px solid #d3dce8;
+}
+
+.item button:hover {
+  border-bottom: 2px solid #fff;
+}
+
+.item:nth-child(2){
+  padding-top: 0px;
+}
+
+.content-head {
+  width: 100%;
+  height: 65px;
+  padding: 20px;
+  background: #d3dce8;
+  margin-bottom: 40px;
+}
+
+.ui-widget {
+  width: 100%;
+}
+
+.content-head input {
+  width: 300px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+
+.fa-search{
+  color: #37485F !important;
+}
+
+.apply-btn {
+  margin-right: 10px;
+  display: inline-block;
+  background: #67ddab;
+  padding: 5px;
+  border-radius: 5px;
+  color: #FFF;
+}
